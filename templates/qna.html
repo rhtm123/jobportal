@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block css %} {% endblock %}
+
+{% block body %} 
+    {% include "header.html" %}
+
+    <h1> All the questions here. </h1>
+
+    {% for question in questions %}
+        <a href="/qna/{{ question.id }}"><h2> {{ question.title }} </h2></a>
+        <p> publish date: {{ question.created }} </p>
+        {% if question.img %}
+        <img src="/media/{{ question.img }}" >
+        {% endif %}
+
+    {% endfor %}
+
+
+
+    {% include "footer.html" %}
+
+{% endblock %}
