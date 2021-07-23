@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block css %} {% endblock %}
+
+{% block body %}
+
+
+    {% include "header.html" %}
+
+    <h1> Create your account here</h1>
+
+    {% if created %}
+
+    <h1> Your account has been created succesfully. </h1>
+
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="your username"> <br>
+        <input type="password" name="password" placeholder="Your password"> <br>
+
+        <input type="submit">
+    </form>
+    {% endif %}
+
+
+
+    {% include "footer.html" %}
+
+{% endblock %}

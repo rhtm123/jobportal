@@ -1,10 +1,14 @@
 from django.http.response import HttpResponseBase
 from django.shortcuts import render, HttpResponse
 
+from django.contrib.auth.decorators import login_required
+
 
 from .models import Question
 
 # Create your views here.
+
+@login_required(login_url="/account/login/")
 def qna(request):
     question_objects = Question.objects.all()
     context_dict = {"name":"Anurag", 'questions':question_objects} 
