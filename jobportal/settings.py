@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qna.apps.QnaConfig',
+    'job.apps.JobConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
